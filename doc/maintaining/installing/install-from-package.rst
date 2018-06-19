@@ -47,7 +47,20 @@ CKAN:
 
 #. Install the Ubuntu packages that CKAN requires (and 'git', to enable you to install CKAN extensions)::
 
-    sudo apt-get install -y nginx apache2 libapache2-mod-wsgi libpq5 redis-server git-core
+    sudo apt-get install -y apache2 libapache2-mod-wsgi libpq5 redis-server git-core
+    
+#. Edit the Apache ports configuration file (``/etc/apache2/ports.conf``) and change the following variable::
+
+    Listen 8080   # (line 5)
+   
+   
+#. Restart Apache::
+
+    sudo service apache2 restart
+    
+#. Install the nginx package that CKAN requires::
+
+    sudo apt-get install -y nginx
 
 #. Download the CKAN package:
 
